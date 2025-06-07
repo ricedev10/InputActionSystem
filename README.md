@@ -35,6 +35,7 @@ moveDirectionAction:AddBinding(Enum.KeyCode.W, 1, {
 
 local jumpAction = PlayerContext:AddAction("JumpAction", InputSystem.InputActionType.Bool)
 jumpAction:AddBinding(Enum.KeyCode.Space, 1)
+jumpAction:AddBinding(Enum.KeyCode.Up, 1)
 
 return {
 	MoveDirection = moveDirectionAction,
