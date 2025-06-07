@@ -40,6 +40,7 @@ jumpAction:AddBinding(Enum.KeyCode.Space, 1)
 jumpAction:AddBinding(Enum.KeyCode.Up, 1)
 
 return {
+	Context = PlayerContext,
 	MoveDirection = moveDirectionAction,
 	JumpAction = jumpAction,
 }
