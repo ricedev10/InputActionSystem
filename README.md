@@ -1,12 +1,14 @@
+Using Roblox's Input Action System, create InputContext(s), InputAction(s), and InputBinding(s) with ease using this lightweight typecheck-supported module.
+
 Basic API:
 ```luau
-Input.new() -> InputContext
-Input.InputActionType: {
+InputActionSystem.new() -> InputContext
+InputActionSystem.InputActionType: {
 	Bool: type
 	Direction1D: type
 	Direction2D: type
 } -- list of custom InputActionTypes
-Input.Priority: {
+InputActionSystem.Priority: {
 	High: {Value: number}
 	Default: {Value: number}
 	Low: {Value: number}
@@ -19,13 +21,13 @@ InputAction:AddBinding() -> InputBinding
 
  Example usage (ModuleScript):
  ```luau
-local InputSystem = require(Packages.InputSystem)
+local InputActionSystem = require(path.to.InputActionSystem)
 	
 -- create input
-local PlayerContext = InputSystem.new("PlayerInput", true, InputSystem.Priority.Default.Value, false)
+local PlayerContext = InputActionSystem.new("PlayerInput", true, InputActionSystem.Priority.Default.Value, false)
 
 -- add actions
-local moveDirectionAction = PlayerContext:AddAction("MoveDirection", InputSystem.InputActionType.Direction2D)
+local moveDirectionAction = PlayerContext:AddAction("MoveDirection", InputActionSystem.InputActionType.Direction2D)
 moveDirectionAction:AddBinding(Enum.KeyCode.W, 1, {
 	Up = Enum.KeyCode.W,
 	Down = Enum.KeyCode.S,
@@ -33,7 +35,7 @@ moveDirectionAction:AddBinding(Enum.KeyCode.W, 1, {
 	Left = Enum.KeyCode.A,
 })
 
-local jumpAction = PlayerContext:AddAction("JumpAction", InputSystem.InputActionType.Bool)
+local jumpAction = PlayerContext:AddAction("JumpAction", InputActionSystem.InputActionType.Bool)
 jumpAction:AddBinding(Enum.KeyCode.Space, 1)
 jumpAction:AddBinding(Enum.KeyCode.Up, 1)
 
