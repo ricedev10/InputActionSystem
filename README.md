@@ -1,5 +1,5 @@
 Basic API:
-```
+```luau
 Input.new() -> InputContext
 Input.InputActionType: {
 	Bool: type
@@ -18,7 +18,7 @@ InputAction:AddBinding() -> InputBinding
 ```
 
  Example usage (ModuleScript):
- ```
+ ```luau
 local InputSystem = require(Packages.InputSystem)
 	
 -- create input
