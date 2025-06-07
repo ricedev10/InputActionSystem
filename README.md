@@ -22,7 +22,7 @@ InputAction:AddBinding() -> InputBinding
 local InputSystem = require(Packages.InputSystem)
 	
 -- create input
-local PlayerContext = Input.new("PlayerInput", true, InputSystem.Priority.Default.Value, false)
+local PlayerContext = InputSystem.new("PlayerInput", true, InputSystem.Priority.Default.Value, false)
 
 -- add actions
 local moveDirectionAction = PlayerContext:AddAction("MoveDirection", InputSystem.InputActionType.Direction2D)
