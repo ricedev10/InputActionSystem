@@ -1,4 +1,4 @@
-Using Roblox's Input Action System, create InputContext(s), InputAction(s), and InputBinding(s) with ease using this lightweight typecheck-supported module.
+Using Roblox's [Input Action System](https://devforum.roblox.com/t/studio-beta-new-input-action-system/3656214), create InputContext(s), InputAction(s), and InputBinding(s) with ease using this lightweight typecheck-supported module.
 
 Basic API:
 ```luau
