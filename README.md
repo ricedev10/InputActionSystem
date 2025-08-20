@@ -1,4 +1,4 @@
-Using Roblox's [Input Action System](https://devforum.roblox.com/t/studio-beta-new-input-action-system/3656214), create [InputContext](https://create.roblox.com/docs/reference/engine/classes/InputContext)(s), [InputAction](https://create.roblox.com/docs/reference/engine/classes/InputAction)(s), and [InputBinding](https://create.roblox.com/docs/reference/engine/classes/InputBinding)(s) with ease using this lightweight typecheck-supported module.
+Using Roblox's [Input Action System](https://devforum.roblox.com/t/studio-beta-new-input-action-system/3656214), create [InputContext](https://create.roblox.com/docs/reference/engine/classes/InputContext)(s), [InputAction](https://create.roblox.com/docs/reference/engine/classes/InputAction)(s), and [InputBinding](https://create.roblox.com/docs/reference/engine/classes/InputBinding)(s) with ease with this typecheck-supported module.
 
 # Basic API:
 
