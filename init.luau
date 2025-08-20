@@ -25,7 +25,6 @@
 local RunService = game:GetService("RunService")
 local Players = game:GetService("Players")
 local Types = require(script.Types)
-local Signal = require(script.Parent.Signal)
 
 local Input = {}
 Input.__index = function(self: Types.Context, index: string)
@@ -125,7 +124,6 @@ function Input.AddAction<T>(self: Types.Context, name: string, type: T & Types.I
 
 	newAction._bindings = {}
 	newAction._state = defaultState :: any
-	newAction._signal = Signal.new(name .. "StateChangedSignal")
 
 	return setmetatable(newAction, Action) :: any
 end
@@ -159,7 +157,6 @@ function Action.AddBinding<T>(
 end
 
 function Action.Fire(self: Types.Action, value)
-	-- self._signal:Fire(value)
 	self._instance:Fire(value)
 end
 

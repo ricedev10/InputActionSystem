@@ -1,7 +1,5 @@
 --!strict
 local Types = {}
-local packages = script.Parent.Parent
-local Signal = require(packages.Signal)
 
 export type Input = {
 	new: (name: string, enabled: boolean?, priority: number?, sink: boolean?) -> Context,
@@ -68,9 +66,8 @@ export type Action<T = any> = {
 	Fire: (self: Action<T>, newState: T) -> (),
 	GetState: (self: Action<T>) -> T,
 
-	StateChanged: Signal.event<(T), ()>,
+	StateChanged: RBXScriptSignal<T>,
 
-	_signal: Signal.newSignal<(T), ()>,
 	_state: T,
 	_bindings: { Binding },
 	_instance: InputAction,
@@ -82,8 +79,8 @@ export type ActionBool<T> = Action<boolean> & {
 
 	AddBinding: (self: ActionBool<T>, KeyCode: Enum.KeyCode, Scale: number) -> Binding<T>,
 
-	Pressed: Signal.event<>, -- when state transitions from false to true
-	Released: Signal.event<>, -- when state transitions from true to false
+	Pressed: RBXScriptSignal<>, -- when state transitions from false to true
+	Released: RBXScriptSignal<>, -- when state transitions from true to false
 }
 
 export type ActionDirection1D<T> = Action<number> & {
@@ -136,7 +133,6 @@ export type Binding<T = InputActionType> = {
 
 	_instance: InputBinding,
 }
-
 --[[ test type
 local input: Input
 local context = input.new("my input")
